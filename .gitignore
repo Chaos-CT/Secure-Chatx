@@ -16,6 +16,8 @@ config/deploy.properties
 /service/config/testing.yml
 /service/config/deploy.properties
 /service/dependency-reduced-pom.xml
+/service/src/test/resources/config/product.yml
+/service/src/test/resources/config/product-secrets-bundle.yml
 .java-version
 .opsmanage
 put.sh
