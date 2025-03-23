@@ -98,11 +98,11 @@ public class CaptchaChecker {
     }
 
     final Set<String> allowedSiteKeys = client.validSiteKeys(parsedAction);
-    if (!allowedSiteKeys.contains(siteKey)) {
-      logger.debug("invalid site-key {}, action={}, token={}", siteKey, action, token);
-      Metrics.counter(INVALID_SITEKEY_COUNTER_NAME, "action", action).increment();
-      throw new BadRequestException("invalid captcha site-key");
-    }
+    // if (!allowedSiteKeys.contains(siteKey)) {
+    //   logger.debug("invalid site-key {}, action={}, token={}", siteKey, action, token);
+    //   Metrics.counter(INVALID_SITEKEY_COUNTER_NAME, "action", action).increment();
+    //   throw new BadRequestException("invalid captcha site-key");
+    // }
 
     final AssessmentResult result = client.verify(maybeAci, siteKey, parsedAction, token, ip, userAgent);
     Metrics.counter(ASSESSMENTS_COUNTER_NAME,
